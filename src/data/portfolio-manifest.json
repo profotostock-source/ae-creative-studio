@@ -1,0 +1,142 @@
+[
+  {
+    "category": "velora",
+    "title": "Radiant Repair Serum",
+    "src": "/portfolio/velora/01_radiant_serum.png",
+    "kind": "AI concept",
+    "filename": "01_radiant_serum.png"
+  },
+  {
+    "category": "velora",
+    "title": "Fleur d’Ivoire fragrance",
+    "src": "/portfolio/velora/02_fleur_ivoire.png",
+    "kind": "AI concept",
+    "filename": "02_fleur_ivoire.png"
+  },
+  {
+    "category": "velora",
+    "title": "Hydra Restore Cream",
+    "src": "/portfolio/velora/03_hydra_cream.png",
+    "kind": "AI concept",
+    "filename": "03_hydra_cream.png"
+  },
+  {
+    "category": "velora",
+    "title": "Nude lipstick",
+    "src": "/portfolio/velora/04_lipstick.png",
+    "kind": "AI concept",
+    "filename": "04_lipstick.png"
+  },
+  {
+    "category": "velora",
+    "title": "Purifying Cleansing Gel",
+    "src": "/portfolio/velora/05_cleansing_gel.png",
+    "kind": "AI concept",
+    "filename": "05_cleansing_gel.png"
+  },
+  {
+    "category": "norden_living",
+    "title": "Bouclé lounge chair",
+    "src": "/portfolio/norden_living/01_armchair.png",
+    "kind": "AI concept",
+    "filename": "01_armchair.png"
+  },
+  {
+    "category": "norden_living",
+    "title": "Scandinavian living room sofa",
+    "src": "/portfolio/norden_living/02_sofa.png",
+    "kind": "AI concept",
+    "filename": "02_sofa.png"
+  },
+  {
+    "category": "norden_living",
+    "title": "Dining table and chairs",
+    "src": "/portfolio/norden_living/03_dining.png",
+    "kind": "AI concept",
+    "filename": "03_dining.png"
+  },
+  {
+    "category": "norden_living",
+    "title": "Travertine side table",
+    "src": "/portfolio/norden_living/04_side_table.png",
+    "kind": "AI concept",
+    "filename": "04_side_table.png"
+  },
+  {
+    "category": "norden_living",
+    "title": "Pendant lighting",
+    "src": "/portfolio/norden_living/05_lighting.png",
+    "kind": "AI concept",
+    "filename": "05_lighting.png"
+  },
+  {
+    "category": "maison_elle",
+    "title": "Scented candles",
+    "src": "/portfolio/maison_elle/01_candles.png",
+    "kind": "AI concept",
+    "filename": "01_candles.png"
+  },
+  {
+    "category": "maison_elle",
+    "title": "Ceramics and vases",
+    "src": "/portfolio/maison_elle/02_ceramics.png",
+    "kind": "AI concept",
+    "filename": "02_ceramics.png"
+  },
+  {
+    "category": "maison_elle",
+    "title": "Home fragrance diffuser",
+    "src": "/portfolio/maison_elle/03_diffuser.png",
+    "kind": "AI concept",
+    "filename": "03_diffuser.png"
+  },
+  {
+    "category": "maison_elle",
+    "title": "Soft bedroom textiles",
+    "src": "/portfolio/maison_elle/04_bedding.png",
+    "kind": "AI concept",
+    "filename": "04_bedding.png"
+  },
+  {
+    "category": "maison_elle",
+    "title": "Flower vase and tabletop styling",
+    "src": "/portfolio/maison_elle/05_table_styling.png",
+    "kind": "AI concept",
+    "filename": "05_table_styling.png"
+  },
+  {
+    "category": "terra_bistro",
+    "title": "Pasta special",
+    "src": "/portfolio/terra_bistro/01_pasta.png",
+    "kind": "AI concept",
+    "filename": "01_pasta.png"
+  },
+  {
+    "category": "terra_bistro",
+    "title": "Burger and fries",
+    "src": "/portfolio/terra_bistro/02_burger.png",
+    "kind": "AI concept",
+    "filename": "02_burger.png"
+  },
+  {
+    "category": "terra_bistro",
+    "title": "Artisan pizza",
+    "src": "/portfolio/terra_bistro/03_pizza.png",
+    "kind": "AI concept",
+    "filename": "03_pizza.png"
+  },
+  {
+    "category": "terra_bistro",
+    "title": "Berry cheesecake",
+    "src": "/portfolio/terra_bistro/04_cheesecake.png",
+    "kind": "AI concept",
+    "filename": "04_cheesecake.png"
+  },
+  {
+    "category": "terra_bistro",
+    "title": "Avocado toast brunch",
+    "src": "/portfolio/terra_bistro/05_brunch.png",
+    "kind": "AI concept",
+    "filename": "05_brunch.png"
+  }
+]
