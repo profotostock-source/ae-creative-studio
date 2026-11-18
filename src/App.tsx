@@ -3,6 +3,7 @@ import Header, { Logo } from './components/Header';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Picture from './components/Picture';
+import Motion from './components/Motion';
 import { portfolio } from './data/portfolio';
 
 const heroItem = portfolio.find((p) => p.src.endsWith('02_fleur_ivoire.png'))!;
@@ -166,6 +167,7 @@ export default function App() {
       <main id="main">
         <Hero />
         <Portfolio />
+        <Motion />
         <Services />
         <Process />
         <About />

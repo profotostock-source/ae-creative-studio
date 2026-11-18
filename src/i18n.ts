@@ -23,6 +23,12 @@ const en = {
     images: 'images',
   },
   lightbox: { close: 'Close', prev: 'Previous image', next: 'Next image', of: 'of' },
+  motion: {
+    eyebrow: 'Motion',
+    title: 'Short videos for food & social',
+    text: 'Looping clips that make dishes feel alive — for menus, delivery apps, Reels and TikTok.',
+    badge: 'Video',
+  },
   services: {
     eyebrow: 'Services',
     title: 'What we create',
@@ -31,7 +37,7 @@ const en = {
       { t: 'Product Visuals', d: 'Campaign-grade packshots and lifestyle scenes for cosmetics, packaged goods and e-commerce catalogues.' },
       { t: 'Food & Menu Visuals', d: 'Appetising images for menus, delivery apps and social media, built from photos of your actual dishes.' },
       { t: 'Interiors & Furniture', d: 'Room sets and lifestyle scenes that place your furniture or décor in a styled, believable space.' },
-      { t: 'Social Media & Ad Creatives', d: 'Consistent visual series sized for feeds, stories, banners and marketplace listings.' },
+      { t: 'Social Media & Ad Creatives', d: 'Consistent visual series and short looping videos for feeds, stories, banners and marketplace listings.' },
       { t: 'Photo Retouching', d: 'Cleanup, colour correction, background work and finishing for photos you already have.' },
     ],
     pricing: 'Every project is different. Tell us what you need and we’ll prepare a tailored quote.',
@@ -120,6 +126,12 @@ const ua: Dict = {
     images: 'зображень',
   },
   lightbox: { close: 'Закрити', prev: 'Попереднє зображення', next: 'Наступне зображення', of: 'з' },
+  motion: {
+    eyebrow: 'Відео',
+    title: 'Короткі відео для їжі та соцмереж',
+    text: 'Зациклені ролики, у яких страви оживають, — для меню, сервісів доставки, Reels і TikTok.',
+    badge: 'Відео',
+  },
   services: {
     eyebrow: 'Послуги',
     title: 'Що ми створюємо',
@@ -128,7 +140,7 @@ const ua: Dict = {
       { t: 'Візуали продуктів', d: 'Пекшоти рекламного рівня та лайфстайл-сцени для косметики, товарів в упаковці та каталогів інтернет-магазинів.' },
       { t: 'Візуали для їжі та меню', d: 'Апетитні зображення для меню, сервісів доставки й соцмереж — на основі фото ваших реальних страв.' },
       { t: 'Інтер’єри та меблі', d: 'Інтер’єрні сцени, що показують ваші меблі чи декор у стильному правдоподібному просторі.' },
-      { t: 'Креативи для соцмереж і реклами', d: 'Цілісні серії візуалів у форматах для стрічки, сторіс, банерів і маркетплейсів.' },
+      { t: 'Креативи для соцмереж і реклами', d: 'Цілісні серії візуалів і короткі зациклені відео для стрічки, сторіс, банерів і маркетплейсів.' },
       { t: 'Ретуш фото', d: 'Чистка, корекція кольору, робота з фоном і фінальне доопрацювання ваших наявних фото.' },
     ],
     pricing: 'Кожен проєкт індивідуальний. Опишіть завдання — підготуємо пропозицію.',
