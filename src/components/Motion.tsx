@@ -32,22 +32,6 @@ const clips: Item[] = [
     description: { en: 'Cosy Christmas mood for a pet treat shop — ready for Instagram and TikTok.', ua: 'Затишний різдвяний настрій для магазину смаколиків — готово для Instagram і TikTok.' },
   },
   {
-    id: 'dog-treats-autumn-pouch',
-    kind: 'image',
-    shape: 'portrait',
-    cat: pets,
-    title: { en: 'Seasonal product shot', ua: 'Сезонне фото продукту' },
-    description: { en: 'Autumn styling around a real treat pouch, sized for Instagram feed.', ua: 'Осіння стилізація навколо реальної упаковки, формат для стрічки Instagram.' },
-  },
-  {
-    id: 'dog-treats-birthday-retriever',
-    kind: 'image',
-    shape: 'portrait',
-    cat: pets,
-    title: { en: 'Birthday lifestyle shot', ua: 'Lifestyle-фото на день народження' },
-    description: { en: 'A party scene for pup cakes that sells the moment, not just the product.', ua: 'Святкова сцена для тортиків для собак, що продає емоцію, а не лише продукт.' },
-  },
-  {
     id: 'chocolate-waffle',
     kind: 'video',
     shape: 'portrait',
