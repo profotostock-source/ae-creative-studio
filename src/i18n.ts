@@ -25,9 +25,10 @@ const en = {
   lightbox: { close: 'Close', prev: 'Previous image', next: 'Next image', of: 'of' },
   motion: {
     eyebrow: 'Motion',
-    title: 'Short videos for food & social',
-    text: 'Looping clips that make dishes feel alive — for menus, delivery apps, Reels and TikTok.',
+    title: 'Reels & short videos',
+    text: 'Vertical Reels and looping clips that make products feel alive — for Instagram, TikTok, online stores and menus.',
     badge: 'Video',
+    photo: 'Photo',
   },
   services: {
     eyebrow: 'Services',
@@ -128,9 +129,10 @@ const ua: Dict = {
   lightbox: { close: 'Закрити', prev: 'Попереднє зображення', next: 'Наступне зображення', of: 'з' },
   motion: {
     eyebrow: 'Відео',
-    title: 'Короткі відео для їжі та соцмереж',
-    text: 'Зациклені ролики, у яких страви оживають, — для меню, сервісів доставки, Reels і TikTok.',
+    title: 'Reels і короткі відео',
+    text: 'Вертикальні Reels і зациклені ролики, у яких продукт оживає, — для Instagram, TikTok, інтернет-магазинів і меню.',
     badge: 'Відео',
+    photo: 'Фото',
   },
   services: {
     eyebrow: 'Послуги',
