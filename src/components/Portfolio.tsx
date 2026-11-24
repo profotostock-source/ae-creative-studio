@@ -104,10 +104,6 @@ export default function Portfolio() {
                 </div>
                 <div className="md:col-span-7">
                   <p className="text-ink-soft">{brand.summary[lang]}</p>
-                  <p className="mt-3 inline-flex items-center gap-2 rounded-full bg-paper-2 px-3 py-1 text-xs text-ink-soft">
-                    <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-amber" />
-                    {t.work.label}
-                  </p>
                 </div>
               </header>
               <ul className="grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-6 md:gap-x-6">

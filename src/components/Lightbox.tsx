@@ -89,7 +89,7 @@ export default function Lightbox({ items, index, onClose, onIndex }: Props) {
       </div>
 
       <div className="px-5 py-4 text-center text-paper md:py-5">
-        <p className="text-[0.7rem] uppercase tracking-[0.2em] text-amber">{item.brand.name} · {t.work.label}</p>
+        <p className="text-[0.7rem] uppercase tracking-[0.2em] text-amber">{item.brand.name}</p>
         <p className="mt-1 font-serif text-xl">{item.title[lang]}</p>
         <p className="mt-0.5 text-sm text-paper/70">{item.description[lang]}</p>
       </div>
