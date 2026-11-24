@@ -116,10 +116,6 @@ export default function Motion() {
           <p className="text-xs font-medium uppercase tracking-[0.22em] text-amber">{t.motion.eyebrow}</p>
           <h2 id="motion-title" className="mt-4 font-serif text-4xl leading-[1.05] md:text-5xl">{t.motion.title}</h2>
           <p className="mt-6 text-ink-soft">{t.motion.text}</p>
-          <p className="mt-4 inline-flex items-center gap-2 rounded-full bg-paper-2 px-3 py-1 text-xs text-ink-soft">
-            <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-amber" />
-            {t.work.label}
-          </p>
         </div>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:col-span-8">
           {clips.map((c) => <Clip key={c.id} clip={c} />)}
