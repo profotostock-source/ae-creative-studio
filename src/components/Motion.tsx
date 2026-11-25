@@ -6,30 +6,39 @@ const base = import.meta.env.BASE_URL;
 type Item = {
   id: string;
   kind: 'video' | 'image';
-  shape: 'portrait' | 'reel';
+  shape: 'portrait' | 'reel' | 'wide';
   cat: { en: string; ua: string } | null;
   title: { en: string; ua: string };
   description: { en: string; ua: string };
 };
 
-const pets = { en: 'Pet treats', ua: 'Смаколики для тварин' };
+const ads = { en: 'Product ad', ua: 'Реклама товару' };
+const realEstate = { en: 'Real estate', ua: 'Нерухомість' };
 
 const clips: Item[] = [
   {
-    id: 'dog-treats-reel',
+    id: 'product-ad-reel',
     kind: 'video',
-    shape: 'reel',
-    cat: pets,
-    title: { en: 'Dog bakery promo Reel', ua: 'Reel для пекарні для собак' },
-    description: { en: '15-second vertical Reel with elegant on-brand titles, built from the brand’s own product photos.', ua: '15-секундний вертикальний ролик з елегантними титрами у кольорах бренду, зроблений з власних фото продукції.' },
+    shape: 'wide',
+    cat: ads,
+    title: { en: 'Product promo video', ua: 'Рекламне відео товару' },
+    description: { en: 'Plain supplier photos turned into a polished lifestyle ad — for product pages, Facebook and Instagram ads.', ua: 'Звичайні фото від постачальника перетворені на стильну рекламу — для карток товару, реклами у Facebook та Instagram.' },
   },
   {
-    id: 'pet-bakery-reel',
+    id: 'skincare-before-after',
     kind: 'video',
-    shape: 'reel',
-    cat: pets,
-    title: { en: 'Festive pet bakery Reel', ua: 'Святковий Reel для пет-пекарні' },
-    description: { en: 'Cosy Christmas mood for a pet treat shop — ready for Instagram and TikTok.', ua: 'Затишний різдвяний настрій для магазину смаколиків — готово для Instagram і TikTok.' },
+    shape: 'wide',
+    cat: ads,
+    title: { en: 'Skincare before & after', ua: 'Косметика: до і після' },
+    description: { en: 'A simple packshot becomes a premium scene with motion — ready for marketplace listings and Reels.', ua: 'Простий знімок упаковки стає преміальною сценою з рухом — готово для маркетплейсів і Reels.' },
+  },
+  {
+    id: 'real-estate-reel',
+    kind: 'video',
+    shape: 'wide',
+    cat: realEstate,
+    title: { en: 'Property promo from renders', ua: 'Промо нерухомості з рендерів' },
+    description: { en: 'Static 3D renders brought to life with smooth camera moves — for developer sites, YouTube and ads.', ua: 'Статичні 3D-рендери оживають завдяки плавному руху камери — для сайтів забудовників, YouTube і реклами.' },
   },
   {
     id: 'chocolate-waffle',
@@ -70,8 +79,8 @@ function Clip({ clip }: { clip: Item }) {
   }, [reduced, clip.kind]);
 
   return (
-    <figure>
-      <div className={`relative ${clip.shape === 'reel' ? 'aspect-[9/16]' : 'aspect-[4/5]'} overflow-hidden bg-paper-2`}>
+    <figure className={clip.shape === 'wide' ? 'sm:col-span-2' : undefined}>
+      <div className={`relative ${clip.shape === 'reel' ? 'aspect-[9/16]' : clip.shape === 'wide' ? 'aspect-video' : 'aspect-[4/5]'} overflow-hidden bg-paper-2`}>
         {clip.kind === 'video' ? (
           <video
             ref={ref}
