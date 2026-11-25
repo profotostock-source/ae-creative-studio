@@ -6,30 +6,71 @@ const base = import.meta.env.BASE_URL;
 type Item = {
   id: string;
   kind: 'video' | 'image';
-  shape: 'portrait' | 'reel';
+  shape: 'portrait' | 'reel' | 'wide' | 'landscape';
   cat: { en: string; ua: string } | null;
   title: { en: string; ua: string };
   description: { en: string; ua: string };
 };
 
-const pets = { en: 'Pet treats', ua: 'Смаколики для тварин' };
+const ads = { en: 'Product ad', ua: 'Реклама товару' };
+const realEstate = { en: 'Real estate', ua: 'Нерухомість' };
 
 const clips: Item[] = [
   {
-    id: 'dog-treats-reel',
+    id: 'product-ad-reel',
     kind: 'video',
-    shape: 'reel',
-    cat: pets,
-    title: { en: 'Dog bakery promo Reel', ua: 'Reel для пекарні для собак' },
-    description: { en: '15-second vertical Reel with elegant on-brand titles, built from the brand’s own product photos.', ua: '15-секундний вертикальний ролик з елегантними титрами у кольорах бренду, зроблений з власних фото продукції.' },
+    shape: 'wide',
+    cat: ads,
+    title: { en: 'Product ad promo', ua: 'Рекламне промо товару' },
+    description: { en: 'A 16-second ad with a scroll-stopping hook, before and after, and a clear call to action — for Facebook, Instagram and TikTok ads.', ua: '16-секундна реклама з чіпляючим початком, порівнянням «до і після» та закликом до дії — для реклами у Facebook, Instagram і TikTok.' },
   },
   {
-    id: 'pet-bakery-reel',
+    id: 'ad-sneaker',
     kind: 'video',
-    shape: 'reel',
-    cat: pets,
-    title: { en: 'Festive pet bakery Reel', ua: 'Святковий Reel для пет-пекарні' },
-    description: { en: 'Cosy Christmas mood for a pet treat shop — ready for Instagram and TikTok.', ua: 'Затишний різдвяний настрій для магазину смаколиків — готово для Instagram і TikTok.' },
+    shape: 'landscape',
+    cat: ads,
+    title: { en: 'Sneaker splash', ua: 'Кросівок у бризках' },
+    description: { en: 'A slow-motion splash on wet asphalt — an attention-grabbing opener for a shoe ad.', ua: 'Сповільнений сплеск на мокрому асфальті — яскравий початок для реклами взуття.' },
+  },
+  {
+    id: 'ad-headphones',
+    kind: 'video',
+    shape: 'landscape',
+    cat: ads,
+    title: { en: 'Headphones hero shot', ua: 'Навушники: головний кадр' },
+    description: { en: 'A sleek rotating packshot with moody light — made for tech product pages.', ua: 'Стильне обертання товару в атмосферному світлі — для сторінок техніки.' },
+  },
+  {
+    id: 'ad-vegetables',
+    kind: 'video',
+    shape: 'landscape',
+    cat: ads,
+    title: { en: 'Fresh produce in motion', ua: 'Свіжі овочі в русі' },
+    description: { en: 'Sliced vegetables falling onto the board — a lively shot for food and kitchenware brands.', ua: 'Нарізані овочі падають на дошку — живий кадр для брендів їжі та кухонного посуду.' },
+  },
+  {
+    id: 'ad-coffee',
+    kind: 'video',
+    shape: 'landscape',
+    cat: ads,
+    title: { en: 'Coffee pour', ua: 'Кава наливається' },
+    description: { en: 'An espresso pour into a glass cup — perfect for coffee machines, cups and cafés.', ua: 'Еспресо наливається у скляну чашку — для кавоварок, посуду й кав’ярень.' },
+  },
+  {
+    id: 'ad-couple-kitchen',
+    kind: 'video',
+    shape: 'wide',
+    cat: ads,
+    title: { en: 'Lifestyle scene with people', ua: 'Лайфстайл-сцена з людьми' },
+    description: { en: 'A couple cooking together in a bright kitchen — real-life context for home and kitchen products, no photoshoot needed.', ua: 'Пара готує разом у світлій кухні — живий контекст для товарів для дому й кухні без фотосесії.' },
+  },
+  {
+    id: 'real-estate-reel',
+    kind: 'video',
+    shape: 'wide',
+    cat: realEstate,
+    title: { en: 'Property promo from renders', ua: 'Промо нерухомості з рендерів' },
+    description: { en: 'Static 3D renders brought to life with smooth camera moves — for developer sites, YouTube and ads.', ua: 'Статичні 3D-рендери оживають завдяки плавному руху камери — для сайтів забудовників, YouTube і реклами.' },
   },
   {
     id: 'chocolate-waffle',
@@ -70,8 +111,8 @@ function Clip({ clip }: { clip: Item }) {
   }, [reduced, clip.kind]);
 
   return (
-    <figure>
-      <div className={`relative ${clip.shape === 'reel' ? 'aspect-[9/16]' : 'aspect-[4/5]'} overflow-hidden bg-paper-2`}>
+    <figure className={clip.shape === 'wide' ? 'sm:col-span-2' : undefined}>
+      <div className={`relative ${clip.shape === 'reel' ? 'aspect-[9/16]' : clip.shape === 'wide' || clip.shape === 'landscape' ? 'aspect-video' : 'aspect-[4/5]'} overflow-hidden bg-paper-2`}>
         {clip.kind === 'video' ? (
           <video
             ref={ref}
