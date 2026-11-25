@@ -1,7 +1,7 @@
 import type { Lang } from './data/portfolio';
 
 const en = {
-  nav: { work: 'Work', services: 'Services', process: 'Process', about: 'About', contact: 'Contact', menu: 'Menu', close: 'Close menu', skip: 'Skip to content', lang: 'Language' },
+  nav: { work: 'Work', services: 'Services', pricing: 'Pricing', process: 'Process', about: 'About', contact: 'Contact', menu: 'Menu', close: 'Close menu', skip: 'Skip to content', lang: 'Language' },
   hero: {
     eyebrow: 'Creative studio for brands',
     tagline: 'Your products. Beautifully reimagined.',
@@ -43,6 +43,21 @@ const en = {
       { t: 'Photo Retouching', d: 'Background removal, blemish and defect removal, colour correction and finishing for the photos you already have.' },
     ],
     pricing: 'Not sure where to start? We’ll prepare 3 free sample images and a 10-second video from your product photos, so you can see the result before you decide.',
+  },
+  plans: {
+    eyebrow: 'Pricing',
+    title: 'Monthly content plans',
+    intro: 'A steady flow of fresh ad visuals every month, for less than the cost of one traditional photoshoot.',
+    perMonth: '/ month',
+    popular: 'Most popular',
+    cta: 'Discuss project',
+    subject: 'Monthly plan enquiry',
+    items: [
+      { name: 'Starter', price: '$199', for: 'For small stores testing new creatives.', features: ['10 advertising product photos', '1 promo video (up to 15 s)', 'Sizes for store, ads and social'] },
+      { name: 'Business', price: '$499', for: 'For growing stores running regular ads.', features: ['25 advertising product photos', '4 promo videos (up to 15 s)', 'Vertical and horizontal formats'] },
+      { name: 'Agency', price: '$999', for: 'For agencies and large catalogues.', features: ['50 advertising product photos', '8 promo videos (up to 15 s)', 'All formats for every channel'] },
+    ],
+    note: 'Need a one-off project or a bigger volume? Write to us and we’ll prepare a custom quote.',
   },
   process: {
     eyebrow: 'Process',
@@ -106,7 +121,7 @@ const en = {
 type Dict = typeof en;
 
 const ua: Dict = {
-  nav: { work: 'Роботи', services: 'Послуги', process: 'Процес', about: 'Про нас', contact: 'Контакти', menu: 'Меню', close: 'Закрити меню', skip: 'Перейти до вмісту', lang: 'Мова' },
+  nav: { work: 'Роботи', services: 'Послуги', pricing: 'Ціни', process: 'Процес', about: 'Про нас', contact: 'Контакти', menu: 'Меню', close: 'Закрити меню', skip: 'Перейти до вмісту', lang: 'Мова' },
   hero: {
     eyebrow: 'Студія рекламного контенту',
     tagline: 'Ваш продукт заслуговує на яскраву рекламу.',
@@ -148,6 +163,21 @@ const ua: Dict = {
       { t: 'Ретуш фото', d: 'Видалення фону, усунення дефектів, корекція кольору й фінальне доопрацювання ваших наявних фото.' },
     ],
     pricing: 'Не знаєте, з чого почати? Ми безкоштовно зробимо 3 пробні зображення та 10-секундне відео з фото вашого товару, щоб ви побачили результат до ухвалення рішення.',
+  },
+  plans: {
+    eyebrow: 'Ціни',
+    title: 'Щомісячні пакети контенту',
+    intro: 'Свіжі рекламні візуали щомісяця дешевше, ніж одна традиційна фотозйомка.',
+    perMonth: '/ міс.',
+    popular: 'Найпопулярніший',
+    cta: 'Обговорити проєкт',
+    subject: 'Запит щодо щомісячного пакета',
+    items: [
+      { name: 'Starter', price: '$199', for: 'Для невеликих магазинів, які тестують нові креативи.', features: ['10 рекламних фото товарів', '1 промо-відео (до 15 с)', 'Розміри для магазину, реклами й соцмереж'] },
+      { name: 'Business', price: '$499', for: 'Для магазинів, що ростуть і регулярно запускають рекламу.', features: ['25 рекламних фото товарів', '4 промо-відео (до 15 с)', 'Вертикальний і горизонтальний формати'] },
+      { name: 'Agency', price: '$999', for: 'Для агенцій і великих каталогів.', features: ['50 рекламних фото товарів', '8 промо-відео (до 15 с)', 'Усі формати для кожного каналу'] },
+    ],
+    note: 'Потрібен разовий проєкт або більший обсяг? Напишіть нам, і ми підготуємо індивідуальну пропозицію.',
   },
   process: {
     eyebrow: 'Процес',

@@ -4,6 +4,7 @@ import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Picture from './components/Picture';
 import Motion from './components/Motion';
+import Pricing from './components/Pricing';
 import { portfolio } from './data/portfolio';
 
 const heroItem = portfolio.find((p) => p.src.endsWith('02_fleur_ivoire.png'))!;
@@ -141,7 +142,7 @@ function Faq() {
 
 function Footer() {
   const { t } = useLang();
-  const links = [['#work', t.nav.work], ['#services', t.nav.services], ['#process', t.nav.process], ['#about', t.nav.about], ['#contact', t.nav.contact]] as const;
+  const links = [['#work', t.nav.work], ['#services', t.nav.services], ['#pricing', t.nav.pricing], ['#process', t.nav.process], ['#about', t.nav.about], ['#contact', t.nav.contact]] as const;
   return (
     <footer className="bg-ink text-paper/70">
       <div className="mx-auto max-w-7xl border-t border-paper/10 px-5 py-12 md:px-8">
@@ -169,6 +170,7 @@ export default function App() {
         <Portfolio />
         <Motion />
         <Services />
+        <Pricing />
         <Process />
         <About />
         <Faq />
