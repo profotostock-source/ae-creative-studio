@@ -22,15 +22,7 @@ const clips: Item[] = [
     shape: 'wide',
     cat: ads,
     title: { en: 'Product promo video', ua: 'Рекламне відео товару' },
-    description: { en: 'Plain supplier photos turned into a polished lifestyle ad — for product pages, Facebook and Instagram ads.', ua: 'Звичайні фото від постачальника перетворені на стильну рекламу — для карток товару, реклами у Facebook та Instagram.' },
-  },
-  {
-    id: 'skincare-before-after',
-    kind: 'video',
-    shape: 'wide',
-    cat: ads,
-    title: { en: 'Skincare before & after', ua: 'Косметика: до і після' },
-    description: { en: 'A simple packshot becomes a premium scene with motion — ready for marketplace listings and Reels.', ua: 'Простий знімок упаковки стає преміальною сценою з рухом — готово для маркетплейсів і Reels.' },
+    description: { en: 'A phone photo turned into a scroll-stopping ad, with a before and after — for product pages, Facebook and Instagram ads.', ua: 'Фото з телефона перетворене на рекламу, що зупиняє прокрутку, з порівнянням «до і після» — для карток товару, реклами у Facebook та Instagram.' },
   },
   {
     id: 'real-estate-reel',
