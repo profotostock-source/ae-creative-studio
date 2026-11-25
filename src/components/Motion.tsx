@@ -6,7 +6,7 @@ const base = import.meta.env.BASE_URL;
 type Item = {
   id: string;
   kind: 'video' | 'image';
-  shape: 'portrait' | 'reel' | 'wide';
+  shape: 'portrait' | 'reel' | 'wide' | 'landscape';
   cat: { en: string; ua: string } | null;
   title: { en: string; ua: string };
   description: { en: string; ua: string };
@@ -21,8 +21,48 @@ const clips: Item[] = [
     kind: 'video',
     shape: 'wide',
     cat: ads,
-    title: { en: 'Product promo video', ua: 'Рекламне відео товару' },
-    description: { en: 'A phone photo turned into a scroll-stopping ad, with a before and after — for product pages, Facebook and Instagram ads.', ua: 'Фото з телефона перетворене на рекламу, що зупиняє прокрутку, з порівнянням «до і після» — для карток товару, реклами у Facebook та Instagram.' },
+    title: { en: 'Product ad promo', ua: 'Рекламне промо товару' },
+    description: { en: 'A 16-second ad with a scroll-stopping hook, before and after, and a clear call to action — for Facebook, Instagram and TikTok ads.', ua: '16-секундна реклама з чіпляючим початком, порівнянням «до і після» та закликом до дії — для реклами у Facebook, Instagram і TikTok.' },
+  },
+  {
+    id: 'ad-sneaker',
+    kind: 'video',
+    shape: 'landscape',
+    cat: ads,
+    title: { en: 'Sneaker splash', ua: 'Кросівок у бризках' },
+    description: { en: 'A slow-motion splash on wet asphalt — an attention-grabbing opener for a shoe ad.', ua: 'Сповільнений сплеск на мокрому асфальті — яскравий початок для реклами взуття.' },
+  },
+  {
+    id: 'ad-headphones',
+    kind: 'video',
+    shape: 'landscape',
+    cat: ads,
+    title: { en: 'Headphones hero shot', ua: 'Навушники: головний кадр' },
+    description: { en: 'A sleek rotating packshot with moody light — made for tech product pages.', ua: 'Стильне обертання товару в атмосферному світлі — для сторінок техніки.' },
+  },
+  {
+    id: 'ad-vegetables',
+    kind: 'video',
+    shape: 'landscape',
+    cat: ads,
+    title: { en: 'Fresh produce in motion', ua: 'Свіжі овочі в русі' },
+    description: { en: 'Sliced vegetables falling onto the board — a lively shot for food and kitchenware brands.', ua: 'Нарізані овочі падають на дошку — живий кадр для брендів їжі та кухонного посуду.' },
+  },
+  {
+    id: 'ad-coffee',
+    kind: 'video',
+    shape: 'landscape',
+    cat: ads,
+    title: { en: 'Coffee pour', ua: 'Кава наливається' },
+    description: { en: 'An espresso pour into a glass cup — perfect for coffee machines, cups and cafés.', ua: 'Еспресо наливається у скляну чашку — для кавоварок, посуду й кав’ярень.' },
+  },
+  {
+    id: 'ad-couple-kitchen',
+    kind: 'video',
+    shape: 'wide',
+    cat: ads,
+    title: { en: 'Lifestyle scene with people', ua: 'Лайфстайл-сцена з людьми' },
+    description: { en: 'A couple cooking together in a bright kitchen — real-life context for home and kitchen products, no photoshoot needed.', ua: 'Пара готує разом у світлій кухні — живий контекст для товарів для дому й кухні без фотосесії.' },
   },
   {
     id: 'real-estate-reel',
@@ -72,7 +112,7 @@ function Clip({ clip }: { clip: Item }) {
 
   return (
     <figure className={clip.shape === 'wide' ? 'sm:col-span-2' : undefined}>
-      <div className={`relative ${clip.shape === 'reel' ? 'aspect-[9/16]' : clip.shape === 'wide' ? 'aspect-video' : 'aspect-[4/5]'} overflow-hidden bg-paper-2`}>
+      <div className={`relative ${clip.shape === 'reel' ? 'aspect-[9/16]' : clip.shape === 'wide' || clip.shape === 'landscape' ? 'aspect-video' : 'aspect-[4/5]'} overflow-hidden bg-paper-2`}>
         {clip.kind === 'video' ? (
           <video
             ref={ref}
