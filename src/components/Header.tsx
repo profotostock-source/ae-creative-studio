@@ -55,6 +55,7 @@ export default function Header() {
   const links = [
     ['#work', t.nav.work],
     ['#services', t.nav.services],
+    ['#pricing', t.nav.pricing],
     ['#process', t.nav.process],
     ['#about', t.nav.about],
     ['#contact', t.nav.contact],
