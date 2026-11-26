@@ -140,7 +140,7 @@ function Clip({ clip }: { clip: Item }) {
         </span>
       </div>
       <figcaption className="mt-3">
-        <p className="text-[0.68rem] font-medium uppercase tracking-[0.18em] text-amber">{clip.cat ? clip.cat[lang] : t.work.cats.food}</p>
+        <p className="text-[0.68rem] font-medium uppercase tracking-[0.18em] text-amber">{clip.cat ? clip.cat[lang] : t.motion.food}</p>
         <h3 className="mt-1 font-serif text-xl leading-tight">{clip.title[lang]}</h3>
         <p className="mt-1 text-sm text-ink-soft">{clip.description[lang]}</p>
       </figcaption>

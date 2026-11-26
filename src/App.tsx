@@ -4,9 +4,9 @@ import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Picture from './components/Picture';
 import Motion from './components/Motion';
-import { portfolio } from './data/portfolio';
+import { pick } from './data/portfolio';
 
-const heroItem = portfolio.find((p) => p.src.endsWith('02_fleur_ivoire.png'))!;
+const heroItem = pick('aurelle', 1);
 
 function Eyebrow({ children }: { children: string }) {
   return <p className="text-xs font-medium uppercase tracking-[0.22em] text-amber">{children}</p>;
@@ -94,7 +94,7 @@ function Process() {
 
 function About() {
   const { t, lang } = useLang();
-  const img = portfolio.find((p) => p.src.endsWith('maison_elle/04_bedding.png'))!;
+  const img = pick('varenne', 2);
   return (
     <section id="about" aria-labelledby="about-title" className="border-t border-line">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-24 md:grid-cols-12 md:px-8 md:py-32">

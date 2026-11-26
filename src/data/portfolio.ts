@@ -1,11 +1,11 @@
 import manifest from './portfolio-manifest.json';
 
-export type CategoryKey = 'beauty' | 'furniture' | 'decor' | 'food';
+export type CategoryKey = 'fragrance' | 'watches' | 'jewelry' | 'leather';
 export type Lang = 'en' | 'ua';
 type L = Record<Lang, string>;
 
 export interface Brand {
-  id: string; // matches manifest "category"
+  id: string; // matches the folder name in public/portfolio
   name: string;
   category: CategoryKey;
   summary: L;
@@ -14,7 +14,7 @@ export interface Brand {
 export interface PortfolioItem {
   id: string;
   brand: Brand;
-  src: string; // original PNG (fallback)
+  src: string; // original photo (fallback)
   webp640: string;
   webp1280: string;
   width: number;
@@ -23,148 +23,152 @@ export interface PortfolioItem {
   description: L;
 }
 
+// All brands are fictional concept brands created by the studio.
 export const brands: Record<string, Brand> = {
-  velora: {
-    id: 'velora',
-    name: 'VÉLORA',
-    category: 'beauty',
+  aurelle: {
+    id: 'aurelle',
+    name: 'AURELLE',
+    category: 'fragrance',
     summary: {
-      en: 'Skincare & beauty concept: warm travertine, silk and soft daylight for a quiet-luxury product story.',
-      ua: 'Концепція для догляду та косметики: теплий травертин, шовк і м’яке денне світло для історії тихої розкоші.',
+      en: 'Haute parfumerie concept: faceted crystal, liquid gold and amber light for an evening fragrance launch.',
+      ua: 'Концепція нішевої парфумерії: гранований кришталь, рідке золото й бурштинове світло для запуску вечірнього аромату.',
     },
   },
-  norden_living: {
-    id: 'norden_living',
-    name: 'NORDEN LIVING',
-    category: 'furniture',
+  cassian: {
+    id: 'cassian',
+    name: 'CASSIAN',
+    category: 'watches',
     summary: {
-      en: 'Scandinavian furniture concept: natural textures, calm palettes and lifestyle room sets.',
-      ua: 'Концепція скандинавських меблів: природні фактури, спокійна палітра та інтер’єрні сцени.',
+      en: 'Swiss watchmaking concept: midnight-blue guilloché, polished steel and old-money interiors.',
+      ua: 'Концепція швейцарського годинникового дому: темно-синій гільош, полірована сталь і класичні інтер’єри.',
     },
   },
-  maison_elle: {
-    id: 'maison_elle',
-    name: 'MAISON ELLE',
-    category: 'decor',
+  ostrea: {
+    id: 'ostrea',
+    name: 'OSTREA',
+    category: 'jewelry',
     summary: {
-      en: 'Home decor concept: candles, ceramics and textiles staged in golden-hour interiors.',
-      ua: 'Концепція декору для дому: свічки, кераміка й текстиль у теплому вечірньому світлі.',
+      en: 'Fine jewellery concept: diamonds, South Sea pearls and soft champagne light.',
+      ua: 'Концепція ювелірного дому: діаманти, перли й м’яке світло кольору шампань.',
     },
   },
-  terra_bistro: {
-    id: 'terra_bistro',
-    name: 'TERRA BISTRO',
-    category: 'food',
+  varenne: {
+    id: 'varenne',
+    name: 'VARENNE',
+    category: 'leather',
     summary: {
-      en: 'Bistro concept: appetising menu visuals with warm, atmospheric restaurant lighting.',
-      ua: 'Концепція для бістро: апетитні візуали для меню з теплим атмосферним світлом ресторану.',
+      en: 'Leather goods concept: cognac calfskin, gold hardware and Mediterranean sunlight.',
+      ua: 'Концепція шкіряних аксесуарів: коньячна теляча шкіра, золота фурнітура й середземноморське сонце.',
     },
   },
 };
 
-// Localised copy per file. Titles describe what each image actually shows.
+export const brandOrder = ['aurelle', 'cassian', 'ostrea', 'varenne'];
+
+// Localised copy per photo (file name without extension).
 const copy: Record<string, { title: L; description: L }> = {
-  '01_radiant_serum.png': {
-    title: { en: 'Radiant Repair Serum', ua: 'Відновлювальна сироватка' },
-    description: { en: 'Dropper bottle on travertine with soft botanical shadows.', ua: 'Флакон із піпеткою на травертині з м’якими тінями рослин.' },
+  'aurelle-1': {
+    title: { en: 'Ambre Nocturne, hero shot', ua: 'Ambre Nocturne, головний кадр' },
+    description: { en: 'Crystal flacon on black obsidian, lit through with amber light.', ua: 'Кришталевий флакон на чорному обсидіані в бурштиновому світлі.' },
   },
-  '02_fleur_ivoire.png': {
-    title: { en: 'Fleur d’Ivoire fragrance', ua: 'Парфум Fleur d’Ivoire' },
-    description: { en: 'Fragrance hero shot framed by peonies and warm light.', ua: 'Головний кадр аромату в обрамленні півоній і теплого світла.' },
+  'aurelle-2': {
+    title: { en: 'Liquid gold splash', ua: 'Сплеск рідкого золота' },
+    description: { en: 'High-speed splash frozen around the bottle.', ua: 'Застиглий сплеск навколо флакона, швидкісна зйомка.' },
   },
-  '03_hydra_cream.png': {
-    title: { en: 'Hydra Restore Cream', ua: 'Зволожувальний крем' },
-    description: { en: 'Fresh, dewy jar shot with jasmine and glossy leaves.', ua: 'Свіжий кадр баночки з жасмином і глянцевим листям.' },
+  'aurelle-3': {
+    title: { en: 'Flacon & gift box', ua: 'Флакон і подарункова коробка' },
+    description: { en: 'E-commerce packshot with the matte black box and gold foil.', ua: 'Пекшот для магазину з матовою чорною коробкою та золотим тисненням.' },
   },
-  '04_lipstick.png': {
-    title: { en: 'Nude lipstick', ua: 'Помада нюдового відтінку' },
-    description: { en: 'Gold-cased lipstick on stone with satin drapery.', ua: 'Помада в золотому футлярі на камені з атласною драпіровкою.' },
+  'aurelle-4': {
+    title: { en: 'Parisian vanity', ua: 'Паризький будуар' },
+    description: { en: 'Lifestyle scene on a marble vanity at dusk.', ua: 'Лайфстайл-сцена на мармуровому туалетному столику ввечері.' },
   },
-  '05_cleansing_gel.png': {
-    title: { en: 'Purifying Cleansing Gel', ua: 'Очищувальний гель' },
-    description: { en: 'Tube packshot on flowing ivory silk.', ua: 'Пекшот тюбика на хвилях слонового шовку.' },
+  'aurelle-5': {
+    title: { en: 'The scent notes', ua: 'Ноти аромату' },
+    description: { en: 'Oud, amber, saffron and black rose around the flacon.', ua: 'Уд, бурштин, шафран і чорна троянда навколо флакона.' },
   },
-  '01_armchair.png': {
-    title: { en: 'Collection overview', ua: 'Огляд колекції' },
-    description: { en: 'Lookbook board: lounge chair, sofa, dining, side table and lighting scenes.', ua: 'Лукбук: крісло, диван, обідня зона, приставний столик і світло.' },
+  'cassian-1': {
+    title: { en: 'Blue guilloché, hero shot', ua: 'Синій гільош, головний кадр' },
+    description: { en: 'Steel dress watch floating above dark slate.', ua: 'Сталевий класичний годинник над темним сланцем.' },
   },
-  '02_sofa.png': {
-    title: { en: 'Scandinavian living room', ua: 'Скандинавська вітальня' },
-    description: { en: 'Bouclé sofa and stone coffee table in a lakeside room set.', ua: 'Диван із букле та кам’яний столик в інтер’єрі з видом на озеро.' },
+  'cassian-2': {
+    title: { en: 'On the wrist', ua: 'На зап’ясті' },
+    description: { en: 'Evening lifestyle shot with a suit cuff and city lights.', ua: 'Вечірній лайфстайл-кадр із манжетом костюма та вогнями міста.' },
   },
-  '03_dining.png': {
-    title: { en: 'Dining table and chairs', ua: 'Обідній стіл і стільці' },
-    description: { en: 'Pedestal oak table with woven chairs under a soft pendant.', ua: 'Дубовий стіл на опорі та плетені стільці під м’яким світильником.' },
+  'cassian-3': {
+    title: { en: 'Presentation box', ua: 'Подарунковий футляр' },
+    description: { en: 'Walnut box with navy velvet, ready for the product page.', ua: 'Горіховий футляр із темно-синім оксамитом для сторінки товару.' },
   },
-  '04_side_table.png': {
-    title: { en: 'Travertine side table', ua: 'Приставний столик із травертину' },
-    description: { en: 'Sculptural side table styled next to a bouclé armchair.', ua: 'Скульптурний столик поруч із кріслом із букле.' },
+  'cassian-4': {
+    title: { en: 'The movement', ua: 'Механізм' },
+    description: { en: 'Macro through the sapphire caseback.', ua: 'Макрозйомка крізь сапфірову задню кришку.' },
   },
-  '05_lighting.png': {
-    title: { en: 'Pendant lighting', ua: 'Підвісне світло' },
-    description: { en: 'Pendant lamp over a round dining table, calm daylight.', ua: 'Підвісна лампа над круглим столом у спокійному денному світлі.' },
+  'cassian-5': {
+    title: { en: 'The library desk', ua: 'Письмовий стіл у бібліотеці' },
+    description: { en: 'Still life with a fountain pen, a leather book and whisky.', ua: 'Натюрморт із пір’яною ручкою, шкіряною книгою та віскі.' },
   },
-  '01_candles.png': {
-    title: { en: 'Scented candles', ua: 'Ароматичні свічки' },
-    description: { en: 'Glowing candles on marble with olive branches.', ua: 'Свічки на мармурі з оливковими гілками.' },
+  'ostrea-1': {
+    title: { en: 'Solitaire, hero shot', ua: 'Каблучка-солітер, головний кадр' },
+    description: { en: 'Brilliant-cut diamond on raw rose quartz.', ua: 'Діамант круглої огранки на необробленому рожевому кварці.' },
   },
-  '02_ceramics.png': {
-    title: { en: 'Ceramics and vases', ua: 'Кераміка та вази' },
-    description: { en: 'Matte ivory vessels in a minimal still life.', ua: 'Матові вази кольору слонової кістки в мінімалістичному натюрморті.' },
+  'ostrea-2': {
+    title: { en: 'South Sea pearls', ua: 'Перлове намисто' },
+    description: { en: 'Pearl strand draped over ivory silk.', ua: 'Нитка перлів на шовку кольору слонової кістки.' },
   },
-  '03_diffuser.png': {
-    title: { en: 'Hydrangeas & candle styling', ua: 'Гортензії та свічка' },
-    description: { en: 'Fresh hydrangeas, candle and books on a stone table.', ua: 'Свіжі гортензії, свічка та книжки на кам’яному столі.' },
+  'ostrea-3': {
+    title: { en: 'Campaign portrait', ua: 'Рекламний портрет' },
+    description: { en: 'Pearl and diamond drop earrings on the model.', ua: 'Сережки з перлиною та діамантом на моделі.' },
   },
-  '04_bedding.png': {
-    title: { en: 'Soft bedroom textiles', ua: 'М’який текстиль для спальні' },
-    description: { en: 'Layered linen bedding and knit throw at golden hour.', ua: 'Лляна постіль і в’язаний плед у золотому світлі.' },
+  'ostrea-4': {
+    title: { en: 'Tennis bracelet', ua: 'Тенісний браслет' },
+    description: { en: 'Diamond line bracelet on Carrara marble.', ua: 'Браслет із доріжкою діамантів на мармурі Каррара.' },
   },
-  '05_table_styling.png': {
-    title: { en: 'Diffuser & tray styling', ua: 'Дифузор і декоративна таця' },
-    description: { en: 'Reed diffuser and candle arranged on a rattan tray.', ua: 'Дифузор із паличками та свічка на ротанговій таці.' },
+  'ostrea-5': {
+    title: { en: 'Gift box', ua: 'Футляр для подарунка' },
+    description: { en: 'Ivory leather box with cream velvet and satin ribbon.', ua: 'Шкіряний футляр кольору слонової кістки з оксамитом і атласною стрічкою.' },
   },
-  '01_pasta.png': {
-    title: { en: 'Prosciutto pizza & menu', ua: 'Піца з прошуто та меню' },
-    description: { en: 'Wood-fired pizza with rocket, styled with the bistro menu.', ua: 'Піца з печі з руколою разом із меню бістро.' },
+  'varenne-1': {
+    title: { en: 'Top-handle bag, hero shot', ua: 'Сумка з ручкою, головний кадр' },
+    description: { en: 'Cognac calfskin on a travertine plinth in hard sunlight.', ua: 'Коньячна шкіра на травертиновому постаменті під яскравим сонцем.' },
   },
-  '02_burger.png': {
-    title: { en: 'Burger and fries', ua: 'Бургер і картопля фрі' },
-    description: { en: 'Glossy brioche burger with fries in moody evening light.', ua: 'Бургер на бріоші з фрі у вечірньому світлі.' },
+  'varenne-2': {
+    title: { en: 'Riviera street', ua: 'Вулиця на Рив’єрі' },
+    description: { en: 'Campaign shot on a sunlit stone street.', ua: 'Рекламний кадр на сонячній кам’яній вулиці.' },
   },
-  '03_pizza.png': {
-    title: { en: 'Artisan pizza', ua: 'Авторська піца' },
-    description: { en: 'Overhead-angle pizza with fresh ingredients around it.', ua: 'Піца з високого ракурсу зі свіжими інгредієнтами довкола.' },
+  'varenne-3': {
+    title: { en: 'Craftsmanship detail', ua: 'Деталі ручної роботи' },
+    description: { en: 'Saddle stitching, painted edges and the engraved clasp.', ua: 'Сідельний шов, пофарбовані краї та гравійована застібка.' },
   },
-  '04_cheesecake.png': {
-    title: { en: 'Berry cheesecake', ua: 'Ягідний чизкейк' },
-    description: { en: 'Dessert close-up with berry coulis and cappuccino.', ua: 'Десерт крупним планом з ягідним соусом і капучино.' },
+  'varenne-4': {
+    title: { en: 'Small leather goods', ua: 'Дрібна шкіргалантерея' },
+    description: { en: 'Catalogue flat lay: card holder, wallet, key ring and belt.', ua: 'Флетлей для каталогу: кардхолдер, гаманець, брелок і ремінь.' },
   },
-  '05_brunch.png': {
-    title: { en: 'Avocado toast brunch', ua: 'Бранч із тостом з авокадо' },
-    description: { en: 'Poached-egg avocado toast with juice and coffee.', ua: 'Тост з авокадо та яйцем пашот, сік і кава.' },
+  'varenne-5': {
+    title: { en: 'On deck', ua: 'На палубі' },
+    description: { en: 'Summer lifestyle scene on a classic teak yacht.', ua: 'Літня лайфстайл-сцена на класичній яхті з тиком.' },
   },
 };
 
-const LANDSCAPE = new Set(['/portfolio/terra_bistro/03_pizza.png']);
+export const portfolio: PortfolioItem[] = manifest
+  .filter((m) => brands[m.category])
+  .map((m) => {
+    // Relative to the deployed base (works at a domain root or in a sub-folder)
+    const rel = import.meta.env.BASE_URL + m.src.replace(/^\//, '');
+    const base = rel.replace(/\.(png|jpe?g)$/i, '');
+    const c = copy[m.filename.replace(/\.(png|jpe?g)$/i, '')];
+    return {
+      id: m.src,
+      brand: brands[m.category],
+      src: rel,
+      webp640: `${base}-640.webp`,
+      webp1280: `${base}-1280.webp`,
+      width: m.width,
+      height: m.height,
+      title: c?.title ?? { en: '', ua: '' },
+      description: c?.description ?? { en: '', ua: '' },
+    };
+  });
 
-export const portfolio: PortfolioItem[] = manifest.map((m) => {
-  // Relative to the deployed base (works at a domain root or in a sub-folder)
-  const rel = import.meta.env.BASE_URL + m.src.replace(/^\//, '');
-  const base = rel.replace(/\.png$/, '');
-  const c = copy[m.filename];
-  const landscape = LANDSCAPE.has(m.src);
-  return {
-    id: m.src,
-    brand: brands[m.category],
-    src: rel,
-    webp640: `${base}-640.webp`,
-    webp1280: `${base}-1280.webp`,
-    width: landscape ? 1536 : 1122,
-    height: landscape ? 1024 : 1402,
-    title: c?.title ?? { en: m.title, ua: m.title },
-    description: c?.description ?? { en: '', ua: '' },
-  };
-});
-
-export const brandOrder = ['velora', 'norden_living', 'maison_elle', 'terra_bistro'];
+/** Find a photo by brand + number, falling back to the first photo. */
+export const pick = (brand: string, n: number) =>
+  portfolio.find((p) => p.brand.id === brand && /-(\d+)\.\w+$/.exec(p.src)?.[1] === String(n)) ?? portfolio[0];

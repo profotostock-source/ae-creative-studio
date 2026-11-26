@@ -5,7 +5,7 @@ import Picture from './Picture';
 import Lightbox from './Lightbox';
 
 type Filter = 'all' | CategoryKey;
-const FILTERS: Filter[] = ['all', 'beauty', 'furniture', 'decor', 'food'];
+const FILTERS: Filter[] = ['all', 'fragrance', 'watches', 'jewelry', 'leather'];
 
 // 6-column layout: two large cards, then three smaller ones
 const SPAN = ['col-span-2 md:col-span-3', 'md:col-span-3', 'md:col-span-2', 'md:col-span-2', 'md:col-span-2'];
